@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        .section {
+            float: left;
+            width: 33.33%;
+            padding: 20px;
+            margin: 5px;
+            background-color: lightgrey;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .section:nth-child(3n+1) {
+            clear: left;
+        }
+
+        .section-title {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 5px;
+            background-color: lightblue;
+            border: 1px solid black;
+        }
+
+        @media (max-width: 991px) {
+            .section {
+                width: 50%;
+            }
+
+            .section:nth-child(2n+1) {
+                clear: none;
+            }
+
+            .section:nth-child(3n+1) {
+                clear: left;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                width: 100%;
+            }
+
+            .section:nth-child(n) {
+                clear: both;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Menu</h1>
+    <div class="section">
+        <div class="section-title">Chicken</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="section">
+        <div class="section-title">Beef</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="section">
+        <div class="section-title">Sushi</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+</body>
+</html>
